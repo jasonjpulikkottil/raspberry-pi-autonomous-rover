@@ -32,29 +32,8 @@ The Raspberry Pi Autonomous Rover is designed for dual-layer safe autonomous nav
 
 The overall system architecture is organized into four interconnected operational layers:
 
-+-------------------------------------------------------------------------+
-|                            PERCEPTION LAYER                             |
-|   - USB Webcam (Visual Input)                                           |
-|   - HC-SR04 Ultrasonic Distance Sensor (Proximity fail-safe)            |
-+------------------------------------+------------------------------------+
-                                     |
-                                     v
-+-------------------------------------------------------------------------+
-|                            PROCESSING LAYER                             |
-|   - Raspberry Pi 3 Model B (Raspberry Pi OS)                            |
-|   - OpenCV DNN Module (ONNX Neural Network Inference)                   |
-|   - Dual-Safety Decision Engine & Background Control Thread             |
-+------------------------------------+------------------------------------+
-                                     |
-           +-------------------------+-------------------------+
-           |                                                   |
-           v                                                   v
-+---------------------------------------+   +---------------------------------------+
-|            ACTUATION LAYER            |   |           MONITORING LAYER            |
-| - L298N Motor Driver Module           |   | - 16x2 I2C LCD (Local hardware state) |
-| - DC Geared Motors (Left/Right)       |   | - Flask Web Server (Remote telemetry, |
-| - Differential Steering Control       |   |   live MJPEG video feed, media gallery) |
-+---------------------------------------+   +---------------------------------------+
+![System Architecture Diagram](docs/images/system_architecture_diagram.jpg)
+
 
 ### Layer Specifications
 
@@ -146,6 +125,7 @@ raspberry-pi-autonomous-rover/
 |-- Rover/                   # Directory created at runtime for photos and videos
 `-- docs/
     `-- images/
+        |-- system_architecture_diagram.jpg
         |-- connection_diagram.jpg
         `-- rpi3_pinout_diagram.jpg
 ```
