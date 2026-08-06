@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Rover Status Live Feed
+Comment=Shows live logs of the background rover service
+Exec=lxterminal -e "journalctl -u rover.service -f"
+Terminal=false

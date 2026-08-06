@@ -1,0 +1,14 @@
+[Unit]
+Description=Rover OpenCV Autonomous Script
+After=network.target
+
+[Service]
+User=rpi
+WorkingDirectory=/home/rpi/
+ExecStart=/usr/bin/python3 /home/rpi/rover.py
+Restart=always
+RestartSec=5
+Environment="PYTHONUNBUFFERED=1"
+
+[Install]
+WantedBy=multi-user.target
